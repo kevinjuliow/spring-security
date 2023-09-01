@@ -14,10 +14,5 @@ public class Role implements GrantedAuthority {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Integer authId ;
-
     private String authority ;
-    @Override
-    public String getAuthority() {
-        return this.authority;
-    }
 }
