@@ -27,7 +27,6 @@ public class ApplicationUser implements UserDetails {
     )
     private Set<Role> authorities ;
 
-
     public ApplicationUser () {
         this.authorities = new HashSet<Role>() ;
     }

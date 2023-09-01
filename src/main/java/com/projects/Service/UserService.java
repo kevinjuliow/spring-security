@@ -18,6 +18,7 @@ public class UserService implements UserDetailsService {
     private PasswordEncoder encoder ;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        System.out.println("in User Detail Service");
         if (!username.equals("kevin")) throw new UsernameNotFoundException("Wrong Username");
         Set<Role> roles= new HashSet<>();
         roles.add(new Role(1 , "USER"));
