@@ -15,4 +15,7 @@ public class Role implements GrantedAuthority {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Integer authId ;
     private String authority ;
+    public Role (String authority){
+        this.authority = authority ;
+    }
 }
