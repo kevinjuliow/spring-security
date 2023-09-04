@@ -13,21 +13,27 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
 public class ApplicationUser implements UserDetails {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id ;
     private String username ;
     private String password;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role_junction" ,
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")}
     )
     private Set<Role> authorities ;
+
+    public ApplicationUser (String username , String password , Set<Role> authorities){
+        this.username = username ;
+        this.password = password;
+        this.authorities = authorities;
+    }
 
     public ApplicationUser () {
         this.authorities = new HashSet<Role>() ;
