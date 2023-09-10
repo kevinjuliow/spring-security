@@ -12,7 +12,7 @@ and login at auth/login , Both using Post Method .
 <br/>
 
 # Admin Access 
-/admin route only can be accessed by admin roles. admin can access both /admin and /user routes 
+/admin routes only can only be accessed by admin roles. admin can access both /admin and /user routes 
 <br/>
 <br/>
 username : admin
